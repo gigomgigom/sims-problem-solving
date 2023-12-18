@@ -1,12 +1,14 @@
+package first_step;
+
 import java.util.Scanner;
 
-public class Bj10926 {
+public class Bj18108 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String a = sc.nextLine();
+        int a = sc.nextInt();
 
-        System.out.println(a+"??!");
+        System.out.println(a-543);
 
         sc.close();
     }

@@ -1,3 +1,5 @@
+package first_step;
+
 import java.util.Scanner;
 
 public class Bj10430 {
