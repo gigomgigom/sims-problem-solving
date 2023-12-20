@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Bj10810 {
+public class Bj10813 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -16,15 +16,18 @@ public class Bj10810 {
 
         int[] basket = new int[N];
 
-        for(int t = 0; t<M; t++) {
-            st = new StringTokenizer(br.readLine(), " ");
-            int i = Integer.parseInt(st.nextToken());
-            int j = Integer.parseInt(st.nextToken());
-            int k = Integer.parseInt(st.nextToken());
+        for(int i = 0; i<N; i++) {
+            basket[i] = i+1;
+        }
 
-            for(int index = i-1; index<j; index++){
-                basket[index] = k;
-            }
+        for(int j = 0; j<M; j++) {
+            st = new StringTokenizer(br.readLine(), " ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            int tmp = basket[a-1];
+            
+            basket[a-1] = basket[b-1];
+            basket[b-1] = tmp;
         }
 
         for(int o : basket) {
