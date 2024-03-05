@@ -34,23 +34,27 @@ public class Subject1 {
                 }
             }
             
-            //선택정렬
+            //선택정렬 https://velog.io/@roro/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC
             //배열에서 반복적으로 비교연산을 하며 요소들중에 최대값을 찾아서 i번째 값에 저장 
             for (int i = 0; i < valueNumberArray.length - 1; i++) {
                 for (int j = i + 1; j < valueNumberArray.length; j++) {
                     if (valueNumberArray[i] < valueNumberArray[j]) { //i인덱스가 갖는 값 그리고 따라오는 [인덱스(i+1) ~ (배열의길이-1)]가 표현하는 값과 하나하나 비교함.
-                        //그러다 만약 
-                        // 번호 집합 배열에서 두 값의 위치를 반복해서 바꿈
+                        //그러다 만약 i번째 값보다 큰 값을 찾았다면
+                        // 번호 집합 배열에서 두 값의 위치를 바꿈
                         int valueTemp = valueNumberArray[i]; //두 값을 바꾸기 전 그 중 한 값을 임시저장용 변수에 저장
                         valueNumberArray[i] = valueNumberArray[j];
                         valueNumberArray[j] = valueTemp;
-                        // 인덱스 집합 배열에서 두값의 위치를 반복해서 바꿈
+                        // 인덱스 집합 배열에서 두값의 위치를 바꿈
                         int indexTemp = originalIndexArray[i];
                         originalIndexArray[i] = originalIndexArray[j];
                         originalIndexArray[j] = indexTemp;
                     }
                 }
             }
+
+            System.out.println("--------------------------------------------------------");
+            System.out.println("\t게시글 번호와 인덱스 순서 확인");
+            System.out.println("--------------------------------------------------------");
             System.out.print("게시글 번호 : ");
             for(int num : valueNumberArray) {
                 System.out.print(num + " ");
@@ -61,6 +65,7 @@ public class Subject1 {
                 System.out.print(num + " ");
             }
             System.out.println();
+            System.out.println("--------------------------------------------------------");
 
 			System.out.println("--------------------------------------------------------");
 			System.out.println("번호\t제목\t\t\t\t글쓴이");
@@ -168,6 +173,7 @@ public class Subject1 {
 					
 				case "5":
 					loopFlag = false;
+                    System.out.println("Terminate program");
 					break;
 					
 					
